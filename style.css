@@ -51,6 +51,10 @@ body{
     background: var(--primary-bg-color);
 }
 
+.nav-links .fa-circle-user {
+    font-size: 2rem;
+}
+
 .auth-buttons {
     display: flex;
     gap: 10px;
