@@ -1,11 +1,17 @@
+:root{
+    --primary-bg-color: #ffb0739a;
+    --secondary-bg-color: #ffb073;
+}
 *{
     font-family: Arial, sans-serif;
-    background-color: #f0f0f0;
     margin: 0;
     padding: 0;
-    
 }
+
 body{
-    background: linear-gradient(to bottom, #000, #550000);
-    padding-bottom: 100vh;
+    background-color: var(--primary-bg-color);
+}
+
+.container{
+    background-color: var(--secondary-bg-color);
 }
