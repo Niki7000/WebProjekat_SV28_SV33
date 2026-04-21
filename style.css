@@ -17,3 +17,70 @@ body{
 .container{
     background-color: var(--secondary-bg-color);
 }
+
+.navbar-custom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 25px;
+    background: var(--secondary-bg-color);
+    position: relative;
+}
+
+.logo {
+    font-size: 22px;
+    font-weight: bold;
+    color: white;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: white;
+    padding: 8px 12px;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    background: var(--primary-bg-color);
+}
+
+.auth-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.btn-custom {
+    border: none;
+    padding: 8px 14px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.login {
+    background: white;
+    color: var(--secondary-bg-color);
+}
+
+.login:hover {
+    background: var(--primary-bg-color);
+    color: white;
+}
+
+.register {
+    background: transparent;
+    border: 2px solid white;
+    color: white;
+}
+
+.register:hover {
+    background: white;
+    color: var(--secondary-bg-color);
+}
