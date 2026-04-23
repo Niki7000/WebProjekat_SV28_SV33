@@ -7,10 +7,6 @@ body{
     font-family: Arial, sans-serif;
     background-color: var(--primary-bg-color);
 }
-img{
-    width: 100%;
-    height: 100%;
-}
 /* NAVBAR*/
 .custom-navbar {
     background-color: var(--secondary-bg-color);
@@ -26,5 +22,29 @@ img{
     width: 40px;
     border-radius: 50%;
 }
+/* АУТОРИ */
 
+.container{
+    background-color: var(--primary-bg-color);
+}
+.autor {
+    text-align: center;
+    padding: 20px;
+    margin: 20px;
+}
+.autor:hover {
+    background-color: var(--secondary-bg-color);
+    border-radius: 10px;
+}
 
+.autor-img {
+    width:100%;
+    height: auto;
+    aspect-ratio: 1/1;
+    border: 1px solid #ccc;
+    border-radius: 50%;
+}
+
+.autor .autor-bio h3{
+    margin: 20px;
+}
