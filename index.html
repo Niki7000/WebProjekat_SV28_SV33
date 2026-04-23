@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,47 +9,82 @@
     <link rel="stylesheet" href="style.css">
     <title>Књиге</title>
 </head>
+
 <body>
-<nav class="navbar-custom">
-        <div class="logo">Клуб књига</div>
 
-        <div class="nav-links">
-            <a href="#">Почетна</a>
-            <a href="#">Аутори</a>
-            <a href="#">Админ књиге</a>
-            <a href="#">Админ аутори</a>
-            <a href="#">
-            <img style="width: 40px;border-radius: 50%;" src="images/профилна.jpg" alt="Профилна слика">
-            </a>
+    <nav class="navbar navbar-expand-lg custom-navbar">
+        <div class="container-fluid">
+            
+            <a class="navbar-brand text-white fw-bold" href="#">Клуб књига</a>
+
+            <button class="navbar-toggler text-white" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
+                Њ
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarContent">
+                
+                <ul class="navbar-nav mx-auto align-items-lg-center gap-lg-3 text-center">
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="#">Почетна</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="#">Аутори</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="#">Админ књиге</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="#">Админ аутори</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <img class="profile-img" src="images/профилна.jpg" alt="Профилна">
+                    </li>
+                    
+                </ul>
+
+                <div class="d-flex gap-2">
+                    <button class="btn btn-light btn-sm btn-1">Пријава</button>
+                    <button class="btn btn-outline-light btn-sm">Регистрација</button>
+                </div>
+
+            </div>
         </div>
-
-        <div class="auth-buttons">
-            <button class="btn-custom login">Пријава</button>
-            <button class="btn-custom register">Регистрација</button>
-        </div>
-
     </nav>
 
-    <h1>Књиге</h1>
-    
-    <div class="container">
-        <div class="book">
-            <h2>Господар прстенова</h2>
-            <p>Автор: Џ. Р. Р. Толкин</p>
-            <p>Година издања: 1954</p>
+    <h1 class="text-center mt-4">Књиге</h1>
+
+    <div class="container mt-4">
+        <div class="row g-3">
+
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="book card p-3">
+                    <h5>Господар прстенова</h5>
+                    <p>Автор: Џ. Р. Р. Толкин</p>
+                    <p>Година: 1954</p>
+                </div>
+            </div>
+
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="book card p-3">
+                    <h5>Хари Потер и Камен мудрости</h5>
+                    <p>Автор: Џ. К. Роулинг</p>
+                    <p>Година: 1997</p>
+                </div>
+            </div>
+
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="book card p-3">
+                    <h5>Животињска фарма</h5>
+                    <p>Автор: Џорџ Орвел</p>
+                    <p>Година: 1949</p>
+                </div>
+            </div>
+
         </div>
-        <div class="book">
-            <h2>Хари Потер и Камен мудрости</h2>
-            <p>Автор: Џ. К. Роулинг</p>
-            <p>Година издања: 1997</p>
-        </div>
-        <div class="book">
-            <h2>1984</h2>
-            <p>Автор: Џорџ Орвел</p>
-            <p>Година издања: 1949</p>
-        </div>  
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
 </body>
-</html
+</html>

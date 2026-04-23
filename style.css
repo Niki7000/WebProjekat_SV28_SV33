@@ -3,88 +3,27 @@
     --secondary-bg-color: #ffb073;
 }
 
-*{
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-}
-
 body{
-    padding-bottom: 100vh;
+    font-family: Arial, sans-serif;
     background-color: var(--primary-bg-color);
 }
 
-.container{
+.custom-navbar {
     background-color: var(--secondary-bg-color);
 }
 
-.navbar-custom {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px 25px;
-    background: var(--secondary-bg-color);
-    position: relative;
-}
-
-.logo {
-    font-size: 22px;
-    font-weight: bold;
+.btn-1:hover {
+    background-color: var(--primary-bg-color);
     color: white;
+    border-color: white;
 }
 
-.nav-links {
-    display: flex;
-    align-items: center;
-    gap: 20px;
+.profile-img {
+    width: 40px;
+    border-radius: 50%;
 }
 
-.nav-links a {
-    text-decoration: none;
-    color: white;
-    padding: 8px 12px;
-    border-radius: 8px;
-    transition: 0.3s;
-}
-
-.nav-links a:hover {
-    background: var(--primary-bg-color);
-}
-
-.nav-links .fa-circle-user {
-    font-size: 2rem;
-}
-
-.auth-buttons {
-    display: flex;
-    gap: 10px;
-}
-
-.btn-custom {
-    border: none;
-    padding: 8px 14px;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: 0.3s;
-}
-
-.login {
-    background: white;
-    color: var(--secondary-bg-color);
-}
-
-.login:hover {
-    background: var(--primary-bg-color);
-    color: white;
-}
-
-.register {
-    background: transparent;
-    border: 2px solid white;
-    color: white;
-}
-
-.register:hover {
-    background: white;
-    color: var(--secondary-bg-color);
+.book {
+    background-color: white;
+    border-radius: 10px;
 }
