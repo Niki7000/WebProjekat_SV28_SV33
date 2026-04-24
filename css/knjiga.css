@@ -28,3 +28,26 @@ body{
     padding: 2px 6px;
     border-radius: 5px;
 }
+
+/* RECENZIJE */
+.review {
+    background-color: white;
+    padding: 10px;
+    border-radius: 8px;
+    margin-top: 10px;
+}
+
+/* FORMA */
+.review-form textarea {
+    resize: none;
+}
+
+.btn-custom {
+    background-color: var(--secondary-bg-color);
+    border: 1px solid white;
+    color: white;
+}
+
+.btn-custom:hover {
+    background-color: white
+}
