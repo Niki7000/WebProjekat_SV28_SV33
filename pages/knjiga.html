@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="../css/knjiga.css">
+        <link rel="stylesheet" href="../css/style.css">
+
+        <title>Књига</title>
+    </head>
+
+    <body>
+        <nav class="navbar navbar-expand-lg custom-navbar">
+        <div class="container-fluid">
+            
+            <a class="navbar-brand text-white fw-bold" href="../index.html">Клуб књига</a>
+
+            <button class="navbar-toggler text-white" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
+                Њ
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarContent">
+                
+                <ul class="navbar-nav mx-auto align-items-lg-center gap-lg-3 text-center">
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="../index.html">Почетна</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="../pages/autori.html">Аутори</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="#">Админ књиге</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="#">Админ аутори</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <img class="profile-img" src="../images/профилна.jpg" alt="Профилна">
+                    </li>
+                    
+                </ul>
+
+                <div class="d-flex gap-2">
+                    <button class="btn btn-light btn-sm btn-1">Пријава</button>
+                    <button class="btn btn-outline-light btn-sm">Регистрација</button>
+                </div>
+
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+
+        <div class="row g-4">
+
+            <div class="col-12 col-md-4 text-center">
+                <img src="../images/knjige/haripoter.jpg" class="book-img" alt="Књига">
+            </div>
+
+            <div class="col-12 col-md-8">
+                <h2>Хари Потер и Камен мудрости</h2>
+
+                <p><strong>Аутор:</strong> 
+                    <a href="#" class="author-link">Џ. К. Роулинг</a>
+                </p>
+
+                <p><strong>Жанр:</strong> Фантазија</p>
+                <p><strong>Формат:</strong> Б5</p>
+                <p><strong>Цена:</strong> 1000 РСД</p>
+                <p><strong>Година:</strong> 1997</p>
+                <p><strong>Број страна:</strong> 223</p>
+                <p><strong>ИСБН број:</strong> 9788675431234</p>
+
+                <p class="mt-3">
+                    Ово је прва књига из серијала о Харију Потеру. Прати дечака који открива да је чаробњак и почиње своје школовање у Хогвортсу.
+                </p>
+            </div>
+
+        </div>
+
+        <div class="reviews mt-5">
+            <h3>Рецензије</h3>
+
+            <div class="review">
+                <p><strong>Ђорђе:</strong> Одлична књига, препоручујем!</p>
+            </div>
+
+            <div class="review">
+                <p><strong>Алекса:</strong> Веома занимљива прича.</p>
+            </div>
+        </div>
+
+        <div class="review-form mt-4">
+            <h4>Оставите рецензију</h4>
+
+            <form>
+                <div class="mb-3">
+                    <textarea class="form-control" rows="4" placeholder="Унесите вашу рецензију..."></textarea>
+                </div>
+
+                <button type="submit" class="btn btn-custom">Пошаљи</button>
+            </form>
+        </div>
+
+    </div>
+    <br>
+
+    <footer>
+        <div class="container">
+            <p class="text-center text-black">&copy; 2026 Огњан Остовић и Никодин Грегорин. СВА ПРАВА ЗАДРЖАНА.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    </body>
+
+</html>

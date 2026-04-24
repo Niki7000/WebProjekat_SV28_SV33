@@ -1,0 +1,53 @@
+:root{
+    --primary-bg-color: #ffb0739a;
+    --secondary-bg-color: #ffb073;
+}
+
+body{
+    font-family: Arial, sans-serif;
+    background-color: var(--primary-bg-color);
+}
+
+/* SLIKA KNJIGE */
+.book-img {
+    height: 100%;
+    max-height: 400px;
+    border-radius: 10px;
+}
+
+/* AUTORSKI LINK */
+.author-link {
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.author-link:hover {
+    color: white;
+    background-color: var(--secondary-bg-color);
+    padding: 2px 6px;
+    border-radius: 5px;
+}
+
+/* RECENZIJE */
+.review {
+    background-color: white;
+    padding: 10px;
+    border-radius: 8px;
+    margin-top: 10px;
+}
+
+/* FORMA */
+.review-form textarea {
+    resize: none;
+}
+
+.btn-custom {
+    background-color: var(--secondary-bg-color);
+    border: 1px solid white;
+    color: white;
+}
+
+.btn-custom:hover {
+    background-color: white
+}
