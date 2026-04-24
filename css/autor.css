@@ -25,20 +25,23 @@ body{
 /* АУТОР */
 .autor-row
 {
-    background-color: var(--primary-bg-color);
     color: black;
     margin: 10px;
-    border:2px solid var(--secondary-bg-color);
-    border-radius: 50px;
 }
 .autor-image {
     padding: 20px;
     text-align: center;
 }
+.autor-info
+{
+    background-color: var(--primary-bg-color);
+    border:2px solid var(--secondary-bg-color);
+    border-radius: 50px;
+}
 .autor-row .autor-bio {
     margin: 2px;
 }
-.autor-books {
+.autor-books{
     margin-bottom: 20px;
 }
 .autor-rate i{
