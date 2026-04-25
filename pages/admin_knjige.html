@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="sr">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="../css/style.css">
+        <link rel="stylesheet" href="../css/admin_knjige.css">
+
+        <title>Админ - Књиге</title>
+    </head>
+
+    <body>
+        <nav class="navbar navbar-expand-lg custom-navbar">
+            <div class="container-fluid">
+                
+                <a class="navbar-brand text-white fw-bold" href="../index.html">Клуб књига</a>
+
+                <button class="navbar-toggler text-white" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
+                    Њ
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarContent">
+                    
+                    <ul class="navbar-nav mx-auto align-items-lg-center gap-lg-3 text-center">
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="../index.html">Почетна</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="../pages/autori.html">Аутори</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="admin_knjige.html">Админ књиге</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="#">Админ аутори</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <img class="profile-img" src="../images/профилна.jpg" alt="Профилна">
+                        </li>
+                        
+                    </ul>
+
+                    <div class="d-flex gap-2">
+                        <button class="btn btn-light btn-sm btn-1">Пријава</button>
+                        <button class="btn btn-outline-light btn-sm">Регистрација</button>
+                    </div>
+
+                </div>
+            </div>
+        </nav>
+
+    <div class="container mt-4">
+    <h2 class="text-center mb-4">Администрација књига</h2>
+
+    <div class="card admin-card mb-4">
+        <div class="card-body">
+            <div class="row g-4 align-items-start">
+
+                <div class="col-12 col-md-3 text-center">
+                    <img src="../images/knjige/haripoter.jpg" class="book-cover">
+                </div>
+
+                <div class="col-12 col-md-9">
+                    <form>
+                        <div class="row g-3">
+
+                            <div class="col-md-6">
+                                <label class="form-label">Назив</label>
+                                <input type="text" class="form-control" value="Хари Потер и Камен мудрости">
+                            </div>
+
+                            <div class="col-md-6">
+                                <label class="form-label">Жанр</label>
+                                <input type="text" class="form-control" value="Фантазија">
+                            </div>
+
+                            <div class="col-12">
+                                <label class="form-label">Опис</label>
+                                <textarea class="form-control">Прва књига о Харију Потеру.</textarea>
+                            </div>
+
+                            <div class="col-md-6">
+                                <label class="form-label">Слике (URL)</label>
+                                <input type="text" class="form-control" value="../images/knjige/haripoter.jpg">
+                            </div>
+
+                            <div class="col-md-6">
+                                <label class="form-label">Формат</label>
+                                <input type="text" class="form-control" value="Б5">
+                            </div>
+
+                            <div class="col-md-4">
+                                <label class="form-label">Цена</label>
+                                <input type="number" class="form-control" value="1000">
+                            </div>
+
+                            <div class="col-md-4">
+                                <label class="form-label">Број страна</label>
+                                <input type="number" class="form-control" value="223">
+                            </div>
+
+                            <div class="col-md-4">
+                                <label class="form-label">ID Аутора</label>
+                                <input type="text" class="form-control" value="1">
+                            </div>
+
+                            <div class="col-12">
+                                <label class="form-label">ISBN</label>
+                                <input type="text" class="form-control" value="9788675431234">
+                            </div>
+
+                        </div>
+
+                        <button class="btn btn-custom mt-3">Edit</button>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="card admin-card mb-4">
+        <div class="card-body">
+            <div class="row g-4 align-items-start">
+
+                <div class="col-12 col-md-3 text-center">
+                    <img src="../images/knjige/lotr.jpg" class="book-cover">
+                </div>
+
+                <div class="col-12 col-md-9">
+                    <form>
+                        <div class="row g-3">
+
+                            <div class="col-md-6">
+                                <label class="form-label">Назив</label>
+                                <input type="text" class="form-control" value="Господар прстенова">
+                            </div>
+
+                            <div class="col-md-6">
+                                <label class="form-label">Жанр</label>
+                                <input type="text" class="form-control" value="Фантазија">
+                            </div>
+
+                            <div class="col-12">
+                                <label class="form-label">Опис</label>
+                                <textarea class="form-control">Епска прича о Средњој земљи.</textarea>
+                            </div>
+
+                            <div class="col-md-6">
+                                <label class="form-label">Слике (URL)</label>
+                                <input type="text" class="form-control" value="../images/knjige/lotr.jpg">
+                            </div>
+
+                            <div class="col-md-6">
+                                <label class="form-label">Формат</label>
+                                <input type="text" class="form-control" value="А5">
+                            </div>
+
+                            <div class="col-md-4">
+                                <label class="form-label">Цена</label>
+                                <input type="number" class="form-control" value="1500">
+                            </div>
+
+                            <div class="col-md-4">
+                                <label class="form-label">Број страна</label>
+                                <input type="number" class="form-control" value="500">
+                            </div>
+
+                            <div class="col-md-4">
+                                <label class="form-label">ID Аутора</label>
+                                <input type="text" class="form-control" value="2">
+                            </div>
+
+                            <div class="col-12">
+                                <label class="form-label">ISBN</label>
+                                <input type="text" class="form-control" value="9781234567890">
+                            </div>
+
+                        </div>
+
+                        <button class="btn btn-custom mt-3">Edit</button>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="card admin-card mb-4">
+        <div class="card-body">
+            <div class="row g-4 align-items-start">
+
+                <div class="col-12 col-md-3 text-center">
+                    <img src="../images/knjige/animalfarm.jpg" class="book-cover">
+                </div>
+
+                <div class="col-12 col-md-9">
+                    <form>
+                        <div class="row g-3">
+
+                            <div class="col-md-6">
+                                <label class="form-label">Назив</label>
+                                <input type="text" class="form-control" value="Животињска фарма">
+                            </div>
+
+                            <div class="col-md-6">
+                                <label class="form-label">Жанр</label>
+                                <input type="text" class="form-control" value="Сатира">
+                            </div>
+
+                            <div class="col-12">
+                                <label class="form-label">Опис</label>
+                                <textarea class="form-control">Алегоријска прича о друштву.</textarea>
+                            </div>
+
+                            <div class="col-md-6">
+                                <label class="form-label">Слике (URL)</label>
+                                <input type="text" class="form-control" value="../images/knjige/animalfarm.jpg">
+                            </div>
+
+                            <div class="col-md-6">
+                                <label class="form-label">Формат</label>
+                                <input type="text" class="form-control" value="Б5">
+                            </div>
+
+                            <div class="col-md-4">
+                                <label class="form-label">Цена</label>
+                                <input type="number" class="form-control" value="900">
+                            </div>
+
+                            <div class="col-md-4">
+                                <label class="form-label">Број страна</label>
+                                <input type="number" class="form-control" value="150">
+                            </div>
+
+                            <div class="col-md-4">
+                                <label class="form-label">ID Аутора</label>
+                                <input type="text" class="form-control" value="3">
+                            </div>
+
+                            <div class="col-12">
+                                <label class="form-label">ISBN</label>
+                                <input type="text" class="form-control" value="9781111111111">
+                            </div>
+
+                        </div>
+
+                        <button class="btn btn-custom mt-3">Edit</button>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    </div>
+
+    <footer>
+        <div class="container">
+            <p class="text-center text-black">&copy; 2026 Огњан Остовић и Никодин Грегорин. СВА ПРАВА ЗАДРЖАНА.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>
