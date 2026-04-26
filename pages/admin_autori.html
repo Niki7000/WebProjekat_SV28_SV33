@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="../css/admin-autor.css">
+    <title>Админ аутори</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg custom-navbar">
+        <div class="container-fluid">
+            
+            <a class="navbar-brand text-white fw-bold" href="../index.html">Клуб књига</a>
+
+            <button class="navbar-toggler text-white" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
+                Њ
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarContent">
+                
+                <ul class="navbar-nav mx-auto align-items-lg-center gap-lg-3 text-center">
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="../index.html">Почетна</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="autori.html">Аутори</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="../pages/admin_knjige.html">Админ књиге</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="../pages/admin_autori.html">Админ аутори</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <img class="profile-img" src="../images/профилна.jpg" alt="Профилна">
+                    </li>
+                </ul>
+                <div class="d-flex gap-2">
+                    <button class="btn btn-light btn-sm btn-1">Пријава</button>
+                    <button class="btn btn-outline-light btn-sm">Регистрација</button>
+                </div>
+            </div>
+        </div>
+    </nav> 
+    <div class="container-fluid mt-4">
+        <div class="row">
+            <div class="col-12 col-md-6 col-lg-6">
+                <div class="row">
+                    <div class="col-12 col-md-6 col-lg-6">
+                        <img src="../images/autori/J._R._R._Tolkien,_ca._1925.jpg" alt="" style="width: 100%;">
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-6">
+                        <h3>Додавање новог аутора</h3>
+                        <form action="#" method="post">
+                            <div class="col-12 col-md-6 col-lg-6">
+                                <label for="ime">Име:</label>
+                                <input type="text" id="ime" name="ime">
+                            </div>
+                            <div class="col-12 col-md-6 col-lg-6">
+                                <label for="prezime">Презиме:</label>
+                                <input type="text" id="prezime" name="prezime">
+                            </div>
+                            <div class="col-12 col-md-6 col-lg-6">
+                                <label for="datum_rodjenja">Датум рођења:</label>
+                                <input type="date" id="datum_rodjenja" name="datum_rodjenja">
+                            </div>
+                            <div class="col-12 col-md-6 col-lg-6">
+                                <label for="datum_smrti">Датум смрти:</label>
+                                <input type="date" id="datum_smrti" name="datum_smrti">
+                            </div>
+                            <div class="col-12 col-md-6 col-lg-6">
+                                <label for="biografija">Биографија:</label>
+                                <textarea id="biografija" name="biografija"></textarea>
+                            </div>
+                            <div class="col-12 col-md-6 col-lg-6">
+                                <label for="slika">Слика:</label>
+                                <input type="file" id="slika" name="slika">
+                            </div>
+                            <div class="col-12 col-md-6 col-lg-6">
+                                <label for="knjige">Књиге:</label>
+                                <select id="knjige" name="knjige" multiple>
+                                    <option value="1">Књига 1</option>
+                                    <option value="2">Књига 2</option>
+                                    <option value="3">Књига 3</option>
+                                </select>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Додај аутора</button>
+                            <button type="submit" class="btn btn-secondary">Ажурирај</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+              <div class="col-12 col-md-6 col-lg-6">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Име</th>
+                            <th>Презиме</th>
+                            <th>Датум рођења</th>
+                            <th>Датум смрти</th>
+                            <th>Биографија</th>
+                            <th>Акције</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>J. K.</td>
+                            <td>Rowling</td>
+                            <td>1965-07-31</td>
+                            <td></td>
+                            <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, doloremque.</td>
+                            <td>
+                                <button class="btn btn-sm btn-primary"><i class="fas fa-edit"></i></button>
+                                <button class="btn btn-sm btn-danger"><i class="fas fa-trash-alt"></i></button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>George</td>
+                            <td>Orwell</td>
+                            <td>1903-06-25</td>
+                            <td>1950-08-26</td>
+                            <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, doloremque.</td>
+                            <td>
+                                <button class="btn btn-sm btn-primary"><i class="fas fa-edit"></i></button>
+                                <button class="btn btn-sm btn-danger"><i class="fas fa-trash-alt"></i></button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>J. R. R.</td>
+                            <td>Tolkien</td>
+                            <td>1892-01-03</td>
+                            <td>1973-09-02</td>
+                            <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, doloremque.</td>
+                            <td>
+                                <button class="btn btn-sm btn-primary"><i class="fas fa-edit"></i></button>
+                                <button class="btn btn-sm btn-danger"><i class="fas fa-trash-alt"></i></button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <div class="container">
+            <p class="text-center text-black">&copy; 2026 Огњан Остовић и Никодин Грегорин. СВА ПРАВА ЗАДРЖАНА.</p>
+        </div>
+    </footer>
+</body>
+</html>
