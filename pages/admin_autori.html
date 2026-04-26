@@ -48,52 +48,45 @@
     <div class="container-fluid mt-4">
         <div class="row">
             <div class="col-12 col-md-6 col-lg-6">
-                <div class="row">
+                <h3>Додавање новог аутора</h3>
+                <form action="#" method="post">
                     <div class="col-12 col-md-6 col-lg-6">
-                        <img src="../images/autori/J._R._R._Tolkien,_ca._1925.jpg" alt="" style="width: 100%;">
+                        <label for="ime">Име:</label>
+                        <input type="text" id="ime" name="ime">
                     </div>
                     <div class="col-12 col-md-6 col-lg-6">
-                        <h3>Додавање новог аутора</h3>
-                        <form action="#" method="post">
-                            <div class="col-12 col-md-6 col-lg-6">
-                                <label for="ime">Име:</label>
-                                <input type="text" id="ime" name="ime">
-                            </div>
-                            <div class="col-12 col-md-6 col-lg-6">
-                                <label for="prezime">Презиме:</label>
-                                <input type="text" id="prezime" name="prezime">
-                            </div>
-                            <div class="col-12 col-md-6 col-lg-6">
-                                <label for="datum_rodjenja">Датум рођења:</label>
-                                <input type="date" id="datum_rodjenja" name="datum_rodjenja">
-                            </div>
-                            <div class="col-12 col-md-6 col-lg-6">
-                                <label for="datum_smrti">Датум смрти:</label>
-                                <input type="date" id="datum_smrti" name="datum_smrti">
-                            </div>
-                            <div class="col-12 col-md-6 col-lg-6">
-                                <label for="biografija">Биографија:</label>
-                                <textarea id="biografija" name="biografija"></textarea>
-                            </div>
-                            <div class="col-12 col-md-6 col-lg-6">
-                                <label for="slika">Слика:</label>
-                                <input type="file" id="slika" name="slika">
-                            </div>
-                            <div class="col-12 col-md-6 col-lg-6">
-                                <label for="knjige">Књиге:</label>
-                                <select id="knjige" name="knjige" multiple>
-                                    <option value="1">Књига 1</option>
-                                    <option value="2">Књига 2</option>
-                                    <option value="3">Књига 3</option>
-                                </select>
-                            </div>
-                            <button type="submit" class="btn btn-primary">Додај аутора</button>
-                            <button type="submit" class="btn btn-secondary">Ажурирај</button>
-                        </form>
+                        <label for="prezime">Презиме:</label>
+                        <input type="text" id="prezime" name="prezime">
                     </div>
-                </div>
+                    <div class="col-12 col-md-6 col-lg-6">
+                        <label for="datum_rodjenja">Датум рођења:</label>
+                        <input type="date" id="datum_rodjenja" name="datum_rodjenja">
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-6">
+                        <label for="datum_smrti">Датум смрти:</label>
+                        <input type="date" id="datum_smrti" name="datum_smrti">
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-6">
+                        <label for="biografija">Биографија:</label>
+                        <textarea id="biografija" name="biografija"></textarea>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-6">
+                        <label for="slika">Слика:</label>
+                        <input type="file" id="slika" name="slika">
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-6">
+                        <label for="knjige">Књиге:</label>
+                        <select id="knjige" name="knjige" multiple>
+                            <option value="1">Књига 1</option>
+                            <option value="2">Књига 2</option>
+                            <option value="3">Књига 3</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Додај аутора</button>
+                    <button type="submit" class="btn btn-secondary">Ажурирај</button>
+                </form>
             </div>
-              <div class="col-12 col-md-6 col-lg-6">
+            <div class="col-12 col-md-6 col-lg-6">
                 <table class="table table-striped">
                     <thead>
                         <tr>
@@ -142,7 +135,7 @@
                     </tbody>
                 </table>
             </div>
-        </div>
+        </div>      
     </div>
     <footer>
         <div class="container">
