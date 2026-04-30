@@ -1,0 +1,53 @@
+:root{
+    --primary-bg-color: #ffb0739a;
+    --secondary-bg-color: #ffb073;
+}
+
+body{
+    background-color: var(--primary-bg-color);
+    font-family: Arial, sans-serif;
+}
+
+.profile-header {
+    border-radius: 12px;
+}
+
+/* ПРОФИЛНА */
+.profile-img-large {
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.review-card {
+    background-color: white;
+    border-radius: 12px;
+    transition: 0.3s;
+    border: 1px solid gainsboro;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+.review-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--secondary-bg-color);
+}
+
+/* ЛИНК КА КЊИЗИ */
+.review-card a {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
+
+.review-card a:hover {
+    color: var(--secondary-bg-color);
+}
+
+/* Рецензије */
+
+.autor-img{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}
