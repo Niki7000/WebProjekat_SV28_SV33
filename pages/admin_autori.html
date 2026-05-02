@@ -45,97 +45,118 @@
             </div>
         </div>
     </nav> 
-    <div class="container-fluid mt-4">
-        <div class="row">
-            <div class="col-12 col-md-6 col-lg-6">
-                <h3>Додавање новог аутора</h3>
-                <form action="#" method="post">
-                    <div class="col-12 col-md-6 col-lg-6">
-                        <label for="ime">Име:</label>
-                        <input type="text" id="ime" name="ime">
-                    </div>
-                    <div class="col-12 col-md-6 col-lg-6">
-                        <label for="prezime">Презиме:</label>
-                        <input type="text" id="prezime" name="prezime">
-                    </div>
-                    <div class="col-12 col-md-6 col-lg-6">
-                        <label for="datum_rodjenja">Датум рођења:</label>
-                        <input type="date" id="datum_rodjenja" name="datum_rodjenja">
-                    </div>
-                    <div class="col-12 col-md-6 col-lg-6">
-                        <label for="datum_smrti">Датум смрти:</label>
-                        <input type="date" id="datum_smrti" name="datum_smrti">
-                    </div>
-                    <div class="col-12 col-md-6 col-lg-6">
-                        <label for="biografija">Биографија:</label>
-                        <textarea id="biografija" name="biografija"></textarea>
-                    </div>
-                    <div class="col-12 col-md-6 col-lg-6">
-                        <label for="slika">Слика:</label>
-                        <input type="file" id="slika" name="slika">
-                    </div>
-                    <div class="col-12 col-md-6 col-lg-6">
-                        <label for="knjige">Књиге:</label>
-                        <select id="knjige" name="knjige" multiple>
-                            <option value="1">Књига 1</option>
-                            <option value="2">Књига 2</option>
-                            <option value="3">Књига 3</option>
-                        </select>
-                    </div>
-                    <button type="submit" class="btn btn-primary">Додај аутора</button>
-                    <button type="submit" class="btn btn-secondary">Ажурирај</button>
-                </form>
+    <div class="container py-5">
+        <div class="row g-4">
+            <div class="col-lg-4">
+                <div class="card shadow p-4">
+                    <h4 mb-4><i class="fa-solid fa-user-plus"></i>Додај аутора</h4>
+                    <form>
+                        <div class="row">
+                            <div class="col-12 col-md-6 mb-3">
+                                <label for="ime" class="form-label">Име</label>
+                                <input type="text" class="form-control" id="ime" placeholder="Унесите име">
+                            </div>
+                            <div class="col-12 col-md-6 mb-3">
+                                <label for="prezime" class="form-label">Презиме</label>
+                                <input type="text" class="form-control" id="prezime" placeholder="Унесите презиме">
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="Biografija" class="form-label">Биографија</label>
+                            <textarea class="form-control" id="Biografija" rows="3" placeholder="Кратка биографија"></textarea>
+                        </div>
+                        <div class="mb-3">
+                            <label for="Slika" class="form-label">Слика</label>
+                            <input type="file" class="form-control" id="Slika">
+                        </div>
+                        <div class="mb-3">
+                            <label for="DatumRodjenja" class="form-label">Датум рођења</label>
+                            <input type="date" class="form-control" id="DatumRodjenja">
+                        </div>
+                        <div class="mb-3">
+                            <p>Статус</p>
+                            <input type="radio" class="form-radio" id="Ziv" name="Status" value="Жив">
+                            <label for="Ziv" class="form-label ml-2">Жив</label>
+                            <input type="radio" class="form-radio" id="Mrtav" name="Status" value="Мртав">
+                            <label for="Mrtav" class="form-label ml-2">Мртав</label>
+                            <input type="radio" class="form-radio" id="U penziji" name="Status" value="У пензији">
+                            <label for="U penziji" class="form-label ml-2">У пензији</label>
+                        </div>
+                        <div class="mb-3">
+                            <label for="DatumSmrti" class="form-label">Датум смрти</label>
+                            <input type="date" class="form-control" id="DatumSmrti" hidden>
+                        </div>
+                        <div class="mb-3">
+                            <label for="brNagrada">Број освојених награда</label>
+                            <input type="number" class="form-control" id="brNagrada" 
+                            placeholder="Унесите број награда" min="0">
+                        </div>
+                        <div class="mb-3">
+                            <label for="brProdanihPrimeraka">Број продатих примерака</label>
+                            <input type="number" class="form-control" id="brProdanihPrimeraka" 
+                            placeholder="Унесите број продатих примерака" min="0">
+                        </div>
+                        <div class="mb-3">
+                            <label for="brTelefona">Број телефона менаџер</label>
+                            <input type="tel" class="form-control" id="brTelefona" 
+                            placeholder="97x-xx-xxxx-xxx-x" pattern="97[8-9]{1}-[0-9]{2}-[0-9]{4}-[0-9]{3}-[0-9]{1}">
+                        </div>
+                        <div class="d-flex gap-2 mt-3">
+                            <button type="submit" class="btn btn-success w-100">Додај аутора</button>
+                            <button type="reset" class="btn btn-warning w-100">Ажурирај аутора</button>
+                        </div>
+                    </form>
+                </div>
             </div>
-            <div class="col-12 col-md-6 col-lg-6">
-                <table class="table table-striped">
-                    <thead>
-                        <tr>
-                            <th>Име</th>
-                            <th>Презиме</th>
-                            <th>Датум рођења</th>
-                            <th>Датум смрти</th>
-                            <th>Биографија</th>
-                            <th>Акције</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>J. K.</td>
-                            <td>Rowling</td>
-                            <td>1965-07-31</td>
-                            <td></td>
-                            <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, doloremque.</td>
-                            <td>
-                                <button class="btn btn-sm btn-primary"><i class="fas fa-edit"></i></button>
-                                <button class="btn btn-sm btn-danger"><i class="fas fa-trash-alt"></i></button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>George</td>
-                            <td>Orwell</td>
-                            <td>1903-06-25</td>
-                            <td>1950-08-26</td>
-                            <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, doloremque.</td>
-                            <td>
-                                <button class="btn btn-sm btn-primary"><i class="fas fa-edit"></i></button>
-                                <button class="btn btn-sm btn-danger"><i class="fas fa-trash-alt"></i></button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>J. R. R.</td>
-                            <td>Tolkien</td>
-                            <td>1892-01-03</td>
-                            <td>1973-09-02</td>
-                            <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, doloremque.</td>
-                            <td>
-                                <button class="btn btn-sm btn-primary"><i class="fas fa-edit"></i></button>
-                                <button class="btn btn-sm btn-danger"><i class="fas fa-trash-alt"></i></button>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
+            <div class="col lg-8">
+                <div class="card shadow p-4">
+                    <h4><i class="fa-solid fa-table"></i>Листа аутора</h4>
+                    <table class="table mt-3">
+                        <thead>
+                            <tr>
+                                <th>Име</th>
+                                <th>Презиме</th>
+                                <th>Датум рођења</th>
+                                <th>Статус</th>
+                                <th>Акције</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Џ. К.</td>
+                                <td>Роулинг</td>
+                                <td>31.07.1965</td>
+                                <td>Жив</td>
+                                <td>
+                                    <button class="btn btn-primary btn-sm" ><i class="fa-solid fa-pen-to-square"></i></button>
+                                    <button class="btn btn-danger btn-sm"><i class="fa-solid fa-trash"></i></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Џорџ</td>
+                                <td>Орвел</td>
+                                <td>25.06.1903</td>
+                                <td>Мртав</td>
+                                <td>
+                                    <button class="btn btn-primary btn-sm" ><i class="fa-solid fa-pen-to-square"></i></button>
+                                    <button class="btn btn-danger btn-sm"><i class="fa-solid fa-trash"></i></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Џорџ Р. Р.</td>
+                                <td>Толкиен</td>
+                                <td>03.01.1892</td>
+                                <td>Мртав</td>
+                                <td>
+                                    <button class="btn btn-primary btn-sm" ><i class="fa-solid fa-pen-to-square"></i></button>
+                                    <button class="btn btn-danger btn-sm"><i class="fa-solid fa-trash"></i></button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
             </div>
-        </div>      
+        </div>
     </div>
     <footer>
         <div class="container">
