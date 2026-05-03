@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="../css/signup.css">
+    <title>Књиге</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg custom-navbar">
+        <div class="container-fluid">
+            
+            <a class="navbar-brand text-white fw-bold" href="index.html">Клуб књига</a>
+
+            <button class="navbar-toggler text-white" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
+                Њ
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarContent">
+                
+                <ul class="navbar-nav mx-auto align-items-lg-center gap-lg-3 text-center">
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="../index.html">Почетна</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="../pages/autori.html">Аутори</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="../pages/admin_knjige.html">Админ књиге</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="../pages/admin_autori.html">Админ аутори</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="../pages/korisnicki_profil.html">
+                        <img class="profile-img" src="../images/профилна.jpg" alt="Профилна">
+                        </a>
+                    </li>
+                    
+                </ul>
+
+                <div class="d-flex gap-2">
+                    <button class="btn btn-light btn-sm btn-1">Пријава</button>
+                    <button class="btn btn-outline-light btn-sm">Регистрација</button>
+                </div>
+
+            </div>
+        </div>
+    </nav>
+        <div class="container py-5">
+            <div class="row align-items-center g-5">
+                <div class="col-12 col-md-6">
+                    <div class="card shadow m-3 p-4">
+                        <h4>Пријави се</h4>
+                        <form>
+                            <div class="my-3">
+                                <label for="username">Корисничко име: </label>
+                                <input type="text" id="username" class="form-control" placeholder="Унесите корисничко име">
+                            </div>
+                            <div class="mb-3">
+                                <label for="password">Лозинка: </label>
+                                <input type="password" id="password" class="form-control" placeholder="Унесите лозинку">
+                            </div>
+                            <button type="submit" class="btn w-100">Пријава</button>
+                        </form>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6">
+                    <div class="card shadow m-3 p-4">
+                        <h4>Регистрација</h4>
+                        <form>
+                            <div class="my-3">
+                                <label for="username">Корисничко име </label>
+                                <input type="text" id="username" class="form-control" placeholder="Унесите корисничко име">
+                            </div>
+                            <div class="mb-3">
+                                <label for="password">Лозинка </label>
+                                <input type="password" id="password" class="form-control" placeholder="Унесите лозинку">
+                            </div>
+                            <div class="mb-3">
+                                <label for="Ime">Име </label>
+                                <input type="text" id="Ime" class="form-control" placeholder="Унесите име">
+                            </div>
+                            <div class="mb-3">
+                                <label for="Prezime">Презиме </label>
+                                <input type="text" id="Prezime" class="form-control" placeholder="Унесите презиме">
+                            </div>
+                            <div class="mb-3">
+                                <label for="email">Email</label>
+                                <input type="email" id="email" class="form-control" placeholder="Унесите email">
+                            </div>
+                            <div class="mb-3">
+                                <label for="datumRodjenja">Датум рођења</label>
+                                <input type="date" id="datumRodjenja" class="form-control">
+                            </div>
+                            <div class="mb-3">
+                                <label for="adresa">Адреса</label>
+                                <input type="text" id="adresa" class="form-control" placeholder="Унесите адресу">
+                            </div>
+                            <div class="mb-3">
+                                <label for="zanimanje">Занимање</label>
+                                <input type="text" id="zanimanje" class="form-control" placeholder="Унесите занимање">
+                            </div>
+                            <button type="submit" class="btn w-100">Регистрација</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+</body>
+</html>

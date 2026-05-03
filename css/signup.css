@@ -1,0 +1,65 @@
+:root{
+    --primary-bg-color: #ffb0739a;
+    --secondary-bg-color: #ffb073;
+}
+
+body{
+    font-family: Arial, sans-serif;
+    background-color: var(--primary-bg-color);
+}
+/* NAVBAR*/
+.custom-navbar {
+    background-color: var(--secondary-bg-color);
+}
+
+.btn-1:hover {
+    background-color: var(--primary-bg-color);
+    color: white;
+    border-color: white;
+}
+
+.profile-img {
+    width: 40px;
+    border-radius: 50%;
+}
+.col-md-6
+{
+    position: relative;
+    border-left: 1px solid var(--secondary-bg-color);
+    overflow: hidden;
+}
+@keyframes dovezi {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+.card::before
+{
+    transform: rotate(10deg);
+}
+.card
+{
+    color: white;
+    background-color: var(--primary-bg-color);
+    &>h4{
+        text-align: center;
+    }
+    animation: dovezi 1s ease-out forwards;
+}
+.card button
+{
+    background-color: white;
+    color: black;
+    &:hover{
+        background-color: var(--secondary-bg-color);
+        color: white;
+        border: 1px solid white;
+    }
+}
+.row
+{
+    height: 90vh;
+}
