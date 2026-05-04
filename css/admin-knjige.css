@@ -11,6 +11,7 @@ body{
 /* CARD */
 .admin-card {
     border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
 }
 
 /* SLIKA */
@@ -31,4 +32,28 @@ body{
     background-color: white;
     color: black;
     border: 1px solid var(--secondary-bg-color);
+}
+
+.btn-danger {
+    border: none;
+}
+
+.add-book-card {
+    max-width: 940px;
+    border-radius: 12px;
+}
+
+.add-book-card textarea {
+    height: 100px;
+    resize: none;
+}
+
+.add-book-card .form-label {
+    font-size: 14px;
+    margin-bottom: 2px;
+}
+
+.add-book-card button {
+    display: block;
+    margin: 20px auto 0;
 }
