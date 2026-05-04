@@ -57,3 +57,7 @@ body{
     display: block;
     margin: 20px auto 0;
 }
+
+.book-input{
+    border: 2px solid var(--secondary-bg-color);
+}
