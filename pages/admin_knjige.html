@@ -7,7 +7,7 @@
 
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
         <link rel="stylesheet" href="../css/style.css">
-        <link rel="stylesheet" href="../css/admin_knjige.css">
+        <link rel="stylesheet" href="../css/admin-knjige.css">
 
         <title>Админ - Књиге</title>
     </head>
@@ -54,8 +54,69 @@
             </div>
         </nav>
 
+    
     <div class="container mt-4">
     <h2 class="text-center mb-4">Администрација књига</h2>
+
+    <div class="card admin-card add-book-card mb-4 mx-auto">
+        <div class="card-body">
+            <h4 class="mb-4 fw-bold">Додај нову књигу</h4>
+
+            <form>
+                <div class="row g-3">
+
+                    <div class="col-md-6">
+                        <label class="form-label">Назив</label>
+                        <input type="text" class="form-control book-input">
+                    </div>
+
+                    <div class="col-md-6">
+                        <label class="form-label">Жанр</label>
+                        <input type="text" class="form-control book-input">
+                    </div>
+
+                    <div class="col-12">
+                        <label class="form-label">Опис</label>
+                        <textarea class="form-control book-input"></textarea>
+                    </div>
+
+                    <div class="col-md-6">
+                        <label class="form-label">Слика (URL)</label>
+                        <input type="text" class="form-control book-input">
+                    </div>
+
+                    <div class="col-md-6">
+                        <label class="form-label">Формат</label>
+                        <input type="text" class="form-control book-input">
+                    </div>
+
+                    <div class="col-md-4">
+                        <label class="form-label">Цена</label>
+                        <input type="number" class="form-control book-input">
+                    </div>
+
+                    <div class="col-md-4">
+                        <label class="form-label">Број страна</label>
+                        <input type="number" class="form-control book-input">
+                    </div>
+
+                    <div class="col-md-4">
+                        <label class="form-label">ID Аутора</label>
+                        <input type="number" class="form-control book-input">
+                    </div>
+
+                    <div class="col-12">
+                        <label class="form-label">ISBN</label>
+                        <input type="text" class="form-control book-input">
+                    </div>
+
+            </div>
+
+            <button class="btn btn-custom mt-3">Додај књигу</button>
+        </form>
+    </div>
+    </div>
+
 
     <div class="card admin-card mb-4">
         <div class="card-body">
@@ -117,6 +178,7 @@
                         </div>
 
                         <button class="btn btn-custom mt-3">Ажурирај</button>
+                        <button type="button" class="btn btn-danger mt-3">Обриши</button>
                     </form>
                 </div>
 
@@ -184,6 +246,7 @@
                         </div>
 
                         <button class="btn btn-custom mt-3">Ажурирај</button>
+                        <button type="button" class="btn btn-danger mt-3">Обриши</button>
                     </form>
                 </div>
 
@@ -251,14 +314,15 @@
                         </div>
 
                         <button class="btn btn-custom mt-3">Ажурирај</button>
+                        <button type="button" class="btn btn-danger mt-3">Обриши</button>
                     </form>
                 </div>
 
             </div>
         </div>
     </div>
-
     </div>
+
 
     <footer>
         <div class="container">
