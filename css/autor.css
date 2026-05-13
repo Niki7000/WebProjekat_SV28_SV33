@@ -55,6 +55,8 @@ td>.btn
 }
 .autor-row .autor-bio {
     margin: 2px;
+    height: 90vh;
+    overflow-y: auto;
 }
 .autor-books{
     background-color: var(--primary-bg-color);
