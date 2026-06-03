@@ -60,26 +60,28 @@
         <div class="row g-4">
 
             <div class="col-12 col-md-4 text-center">
-                <img src="../images/knjige/haripoter.jpg" class="book-img" alt="Књига">
+                <img id="book-image" class="book-img" alt="Књига">
             </div>
 
             <div class="col-12 col-md-8">
-                <h2>Хари Потер и Камен мудрости</h2>
+                <h2 id="book-title"></h2>
 
                 <p><strong>Аутор:</strong> 
-                    <a href="autor.html" class="author-link">Џ. К. Роулинг</a>
+                    <a id="book-author" href="#" class="author-link"></a>
                 </p>
 
-                <p><strong>Жанр:</strong> Фантазија</p>
-                <p><strong>Формат:</strong> Б5</p>
-                <p><strong>Цена:</strong> 1000 РСД</p>
-                <p><strong>Година:</strong> 1997</p>
-                <p><strong>Број страна:</strong> 223</p>
-                <p><strong>ИСБН број:</strong> 9788675431234</p>
+                <p><strong>Жанр:</strong> <span id="book-genre"></span></p>
 
-                <p class="mt-3">
-                    Ово је прва књига из серијала о Харију Потеру. Прати дечака који открива да је чаробњак и почиње своје школовање у Хогвортсу.
-                </p>
+                <p><strong>Формат:</strong> <span id="book-format"></span></p>
+
+                <p><strong>Цена:</strong> <span id="book-price"></span></p>
+
+                <p><strong>Број страна:</strong> <span id="book-pages"></span></p>
+
+                <p><strong>ИСБН:</strong> <span id="book-isbn"></span></p>
+
+                <p id="book-description" class="mt-3"></p>
+
             </div>
 
         </div>
@@ -120,4 +122,5 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
     </body>
 
+    <script src="../js/knjiga.js"></script>
 </html>
