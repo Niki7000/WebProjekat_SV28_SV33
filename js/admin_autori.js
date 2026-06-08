@@ -53,9 +53,18 @@ function izmeniAutora(id)
        biografija.value = authors[id]['biografija'];
        datumRodjenja.value = authors[id]['datumRodjenja'];
        if(status) 
-        {status.checked = true;}
+        {
+            status.checked = true;
+            if (status.value == 'Преминуо')
+                datumSmrti.hidden = false;
+            else datumSmrti.hidden = true;
+        }
        datumSmrti.value = authors[id]['datumSmrti'];
        brojNagrada.value = authors[id]['brojOsvojenihNagrada'];
        brojKnjiga.value = authors[id]['brojProdatihPrimeraka'];
        telefon.value = authors[id]['kontaktTelefonMenadzera'];
+}
+function validPhoneNumber(phoneNumber) {
+    var phoneRegex = /^'+'381 [0-9]{2} [0-9]{3}-[0-9]{4}$/;
+    return phoneRegex.test(phoneNumber);
 }

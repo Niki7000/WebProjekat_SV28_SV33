@@ -22,7 +22,7 @@ request.onload = function () {
 function dodajAutora() {
     var red = document.getElementById('autor-list');
     var container = document.getElementsByClassName('autor-container')[0];
-    for (var i= 0; i < authorIds.length; i+=3) {
+    for (var i=0; i < authorIds.length; i+=3) {
         for (let j=0;j<3;j++)
         {
             red.innerHTML += 
