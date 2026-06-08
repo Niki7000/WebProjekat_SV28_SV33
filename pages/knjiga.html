@@ -88,26 +88,24 @@
 
         <div class="mt-5">
             <h3>Рецензије</h3>
-
-            <div class="review">
-                <p><strong>Ђорђе:</strong> Одлична књига, препоручујем!</p>
-            </div>
-
-            <div class="review">
-                <p><strong>Алекса:</strong> Веома занимљива прича.</p>
-            </div>
+            <div id="reviews-container"></div>
         </div>
 
         <div class="review-form mt-4">
             <h4>Оставите рецензију</h4>
+            
+            <form id="review-form">
 
-            <form>
                 <div class="mb-3">
-                    <textarea class="form-control" rows="4" placeholder="Унесите вашу рецензију..."></textarea>
-                </div>
 
+                    <textarea id="review-text" class="form-control" rows="4" placeholder="Унесите вашу рецензију..."></textarea>
+                    <div id="review-error" class="text-danger mt-2" ></div>
+
+                </div>
                 <button type="submit" class="btn btn-custom">Пошаљи</button>
+
             </form>
+
         </div>
 
     </div>
