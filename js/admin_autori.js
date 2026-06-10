@@ -32,10 +32,11 @@ function tabelaAutora()
                 <td>${authors[authorIds[i]]['status']}</td>
                 <td>
                     <button class="btn btn-primary btn-sm" onclick="izmeniAutora('${authorIds[i]}')" title="Измени"><i class="fa-solid fa-pen-to-square"></i></button>
-                    <button class="btn btn-danger btn-sm" onclick="obrisiAutora('${authorIds[i]}')" title="Обриши"><i class="fa-solid fa-trash"></i></button>
+                    <button type="button" class="btn btn-danger btn-sm delete-btn" title="Обриши" data-id="${authorIds[i]}"><i class="fa-solid fa-trash"></i></button>
                 </td>
             </tr>`;
         }
+        postaviDeleteDugmad();
     }
 function izmeniAutora(id)
 {
@@ -65,6 +66,93 @@ function izmeniAutora(id)
        telefon.value = authors[id]['kontaktTelefonMenadzera'];
 }
 function validPhoneNumber(phoneNumber) {
-    var phoneRegex = /^'+'381 [0-9]{2} [0-9]{3}-[0-9]{4}$/;
+    var phoneRegex = /^\+381 [0-9]{2} [0-9]{3}-[0-9]{4}$/;
     return phoneRegex.test(phoneNumber);
 }
+function proveriValidacijuAutora()
+{
+    let ime = document.getElementById('ime');
+    let prezime = document.getElementById('prezime');
+    let biografija = document.getElementById('Biografija');
+    let datumRodjenja = document.getElementById('DatumRodjenja');
+    let status = document.querySelector('input[name="Status"]:checked');
+    let datumSmrti = document.getElementById('DatumSmrti');
+    let brojNagrada = document.getElementById('brNagrada');
+    let brojKnjiga = document.getElementById('brProdanihPrimeraka');
+    let telefon = document.getElementById('brTelefona');
+    let validno = true;
+
+    let polja = [ime, prezime, biografija, datumRodjenja, brojNagrada, brojKnjiga, telefon];
+
+    polja.forEach(polje => {
+        if (polje.value.trim() === '') {
+
+            polje.classList.add('is-invalid');
+            validno = false;
+        } else {
+            polje.classList.remove('is-invalid');
+            polje.classList.add('is-valid');
+        }
+    });
+
+    if (status) {
+        if (status.value === 'Преминуо' && datumSmrti.value.trim() === '') {
+            datumSmrti.classList.add('is-invalid');
+            validno = false;
+        } else {
+            datumSmrti.classList.remove('is-invalid');
+        }
+    } else {
+        validno = false;
+    }
+
+    if (!validPhoneNumber(telefon.value)) {
+        telefon.classList.add('is-invalid');
+        validno = false;
+    } else {
+        telefon.classList.remove('is-invalid');
+    }
+
+    document.getElementById("poruka").innerHTML = validno ? "Сви подаци су исправни." : "Подаци нису исправни.";
+    return validno;
+}
+function Validacija()
+{
+    let forma = document.getElementById('forma-autor');
+    forma.addEventListener('submit', function(event) {
+        event.preventDefault();
+        proveriValidacijuAutora();
+    });
+}
+Validacija();
+function postaviDeleteDugmad(){
+
+    let deleteButtons =
+        document.querySelectorAll('.delete-btn');
+
+    deleteButtons.forEach(button => {
+
+        button.addEventListener('click', function(){
+
+            let modal =
+                new bootstrap.Modal(
+                    document.getElementById('deleteModal')
+                );
+
+            modal.show();
+
+        });
+
+    })};
+function postaviUpdateDugmad(){
+    if (!proveriValidacijuAutora()) {
+        return;
+    }
+    let modal =
+        new bootstrap.Modal(
+            document.getElementById('updateModal')
+        );
+
+    modal.show();
+}
+
