@@ -82,3 +82,48 @@ document.getElementById('register-form')
 
     alert('Регистрација успешна');
 });
+function isValidRegistration() {
+    let validno = true;
+    let ime = document.getElementById('Ime');
+    let prezime = document.getElementById('Prezime');
+    let korisnickoIme = document.getElementById('username');
+    let email = document.getElementById('email');
+    let lozinka = document.getElementById('password');
+    let datumRodjenja = document.getElementById('datumRodjenja');
+    let adresa = document.getElementById('adresa');
+    let zanimanje = document.getElementById('zanimanje');
+
+    let polja = [ime, prezime, korisnickoIme, email, lozinka, datumRodjenja, adresa, zanimanje];
+    polja.forEach(polje => {
+        if (!polje || polje.value.trim() === '') {
+            if (polje) polje.classList.add('is-invalid');
+            validno = false;
+        } else {
+            polje.classList.remove('is-invalid');
+            polje.classList.add('is-valid');
+        }
+    });
+
+    if (korisnickoIme && korisnickoIme.value.trim() !== '') {
+        for (let id in users) {
+            if (users[id] && users[id].korisnickoIme === korisnickoIme.value.trim()) {
+                korisnickoIme.classList.add('is-invalid');
+                validno = false;
+                break;
+            }
+        }
+    }
+
+    return validno;
+}
+
+function Validacija() {
+    let forma = document.getElementById('register-form');
+    forma.addEventListener('submit', function(event) {
+        event.preventDefault();
+        if (isValidRegistration()) {
+             forma.submit();
+        }
+    });
+}
+Validacija();
