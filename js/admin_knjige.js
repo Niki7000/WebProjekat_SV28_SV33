@@ -124,6 +124,7 @@ function prikaziKnjige() {
 
     postaviValidaciju();
     postaviDeleteDugmad();
+    postaviUpdateValidaciju();
 }
 
 let requestBooks = new XMLHttpRequest();
@@ -320,3 +321,43 @@ function validirajDodavanje() {
 }
 
 validirajDodavanje();
+
+function postaviUpdateValidaciju(){
+
+    let updateButtons =
+        document.querySelectorAll('.btn-custom');
+
+    updateButtons.forEach(button => {
+
+        button.addEventListener('click', function(){
+
+            let form =
+                this.closest('.book-form');
+
+            let isbn =
+                form.querySelector('.isbn-input');
+
+            let regex =
+                /^(97[89])([-]?[0-9]){10}$/;
+
+            if(regex.test(isbn.value)){
+
+                isbn.classList.remove('is-invalid');
+                isbn.classList.add('is-valid');
+
+                let poruka = document.getElementById('poruka').innerHTML = "Подаци су исправни.";
+            }
+            else{
+
+                isbn.classList.remove('is-valid');
+                isbn.classList.add('is-invalid');
+
+                let poruka = document.getElementById('poruka').innerHTML = "Подаци нису су исправни.";
+
+            }
+
+        });
+
+    });
+
+}
