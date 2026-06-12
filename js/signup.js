@@ -41,8 +41,7 @@ document.getElementById('login-form')
             pronadjenId
         );
 
-        window.location.href =
-            'korisnicki_profil.html';
+        window.location.href = 'korisnicki_profil.html';
 
     }else{
 
@@ -76,7 +75,7 @@ document.getElementById('register-form')
     };
 
     localStorage.setItem(
-        'noviKorisnik',
+        'ulogovanKorisnik',
         JSON.stringify(korisnik)
     );
 
