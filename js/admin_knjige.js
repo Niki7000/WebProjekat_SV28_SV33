@@ -223,8 +223,7 @@ function postaviDeleteDugmad(){
 
 function validirajDodavanje() {
 
-    let forma =
-        document.getElementById('add-book-form');
+    let forma = document.getElementById('add-book-form');
 
     forma.addEventListener('submit', function(e){
 
@@ -264,7 +263,8 @@ function validirajDodavanje() {
             format,
             cena,
             brojStrana,
-            isbn
+            isbn,
+            raspored
         ];
 
         polja.forEach(polje => {
