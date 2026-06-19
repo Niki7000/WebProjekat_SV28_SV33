@@ -263,8 +263,7 @@ function validirajDodavanje() {
             format,
             cena,
             brojStrana,
-            isbn,
-            raspored
+            isbn
         ];
 
         polja.forEach(polje => {
@@ -311,6 +310,17 @@ function validirajDodavanje() {
 
         if(validno){
             document.getElementById("poruka").innerHTML = "Сви подаци су исправни.";
+            let novaKnjiga = {
+                naziv: naziv.value,
+                zanr: zanr.value,
+                opis: opis.value,
+                slike: [ slika.value ],
+                format: format.value,
+                cena: Number(cena.value),
+                brojStrana: Number(brojStrana.value),
+                isbn: isbn.value
+            };
+            dodajNovuKnjigu(novaKnjiga);
         }
         else{
             document.getElementById("poruka").innerHTML = "Подаци нису исправни.";
@@ -360,4 +370,44 @@ function postaviUpdateValidaciju(){
 
     });
 
+}
+
+function dodajNovuKnjigu(novaKnjiga){
+    
+    let novId = generisiNoviBookId();
+
+    fetch(firebaseUrl + '/knjige/' + novId + '.json', {
+        method: 'PUT',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(novaKnjiga)
+    })
+    .then(response => response.json)
+    .then(data => {
+        document.getElementById('poruka').innerHTML = 'Књига је успешно додата. ';
+        
+        document.getElementById('add-book-form').reset();
+        setTimeout(() => {
+            location.reload();
+        }, 1000)
+    })
+    .catch(error => {
+        document.getElementById('poruka').innerHTML = "Грешка приликом додавања.";
+        console.log(error);
+    })
+
+}
+
+function generisiNoviBookId(){
+    let maxBroj = 0;
+
+    for(let id in bookIds){
+        let broj = parseInt(id.replace('knj',''));
+        
+        if(broj > maxBroj) maxBroj = broj;
+    }
+    
+    maxBroj += 1;
+    return `knj` + String(maxBroj).padStart(3, '0');
 }
