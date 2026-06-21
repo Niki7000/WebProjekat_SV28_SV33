@@ -4,6 +4,7 @@ var firebaseUrl = 'https://webprojekat-sv28-sv33-default-rtdb.europe-west1.fireb
 var autor = {};
 let zbir=0
 var request = new XMLHttpRequest();
+let korisnikId = localStorage.getItem('ulogovanKorisnik');
 
 request.open('GET', firebaseUrl + '/autori/'+id+'.json');
 request.send();
@@ -91,3 +92,71 @@ function prikaziKnjige(knjigeAutora)
                             </tr>`
     }
 }
+function oceniAutora(vrednost)
+{
+    let kljucevi = Object.keys(ocene);
+    let poslednji = kljucevi[kljucevi.length-1];
+    let noviKljuc = parseInt(poslednji.replace("oce",""))+1;
+    noviKljuc = "oce"+String(noviKljuc).padStart(3,'0');
+    let ocena={
+        "datum":new Date().toISOString().split('T')[0],
+        "idAutora":id,
+        "idKorisnika":korisnikId,
+        "vrednost":vrednost
+    }
+    fetch(firebaseUrl + '/ocene/'+noviKljuc+'.json',{
+        method:'PUT',
+        body:JSON.stringify(ocena)
+    }).then(response => response.json())
+    .then(data => {
+        alert("Успешно сте оценили аутора!");
+        window.location.reload();
+    }).catch(error => {
+        console.error('Грешка при слању података:', error);
+    })
+}
+function prikazOcnea()
+{
+    let zvezde = document.getElementsByClassName('korisnik-ocena-autor')[0];
+    if(!korisnikId)
+    {
+        zvezde.innerHTML = '<p class="text-center">Молимо вас да се пријавите да бисте оценили аутора.</p>';
+        return;
+    }
+    zvezde.innerHTML = `<i class="far fa-star"></i>
+                        <i class="far fa-star"></i>
+                        <i class="far fa-star"></i>
+                        <i class="far fa-star"></i>
+                        <i class="far fa-star"></i>`;
+    let zvezdice = zvezde.children;
+    for(let star of zvezdice)
+    {
+        star.addEventListener('mouseover', function() {
+            for(let i=0;i<zvezdice.length;i++)
+            {
+                zvezdice[i].classList.add('fa-solid');
+                zvezdice[i].classList.remove('far');
+                if(star==zvezdice[i]) break;
+            }
+        });
+        star.addEventListener("mouseout",function() {
+            for(let i=0;i<zvezdice.length;i++)
+            {
+                zvezdice[i].classList.remove('fa-solid');
+                zvezdice[i].classList.add('far');
+            }
+        });
+        star.addEventListener("click",function() {
+            for(let i=0;i<zvezdice.length;i++)
+            {
+                if(star==zvezdice[i])
+                {
+                    oceniAutora(i+1);
+                    break;
+                }
+            }
+        });
+    }
+
+}
+prikazOcnea();
