@@ -109,8 +109,8 @@ function oceniAutora(vrednost)
         body:JSON.stringify(ocena)
     }).then(response => response.json())
     .then(data => {
-        alert("Успешно сте оценили аутора!");
-        window.location.reload();
+        prikaziModal("Успех", "Успешно сте оценили аутора");
+        //window.location.reload();
     }).catch(error => {
         console.error('Грешка при слању података:', error);
     })
@@ -159,4 +159,25 @@ function prikazOcnea()
     }
 
 }
+
+function prikaziModal(naslov, poruka){
+
+    document.getElementById(
+        'messageModalTitle'
+    ).innerText = naslov;
+
+    document.getElementById(
+        'messageModalBody'
+    ).innerText = poruka;
+
+    let modal =
+        new bootstrap.Modal(
+            document.getElementById(
+                'messageModal'
+            )
+        );
+
+    modal.show();
+}
+
 prikazOcnea();

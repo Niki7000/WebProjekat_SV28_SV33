@@ -1,5 +1,4 @@
 let firebaseUrl = 'https://webprojekat-sv28-sv33-default-rtdb.europe-west1.firebasedatabase.app';
-
 let users = {};
 
 fetch(firebaseUrl + '/korisnici.json')
@@ -44,8 +43,7 @@ document.getElementById('login-form')
         window.location.href = 'korisnicki_profil.html';
 
     }else{
-
-        alert('Погрешно корисничко име или лозинка');
+        prikaziModal('Грешка', 'Погрешно корисничко име или лозинка');
     }
 });
 
@@ -54,20 +52,15 @@ document.getElementById('register-form')
 
     e.preventDefault();
 
-    let novoIme =
-        document.getElementById('reg-ime').value;
+    let novoIme = document.getElementById('reg-ime').value;
 
-    let novoPrezime =
-        document.getElementById('reg-prezime').value;
+    let novoPrezime = document.getElementById('reg-prezime').value;
 
-    let korisnickoIme =
-        document.getElementById('reg-username').value;
+    let korisnickoIme = document.getElementById('reg-username').value;
 
-    let email =
-        document.getElementById('reg-email').value;
+    let email = document.getElementById('reg-email').value;
 
     let korisnik = {
-
         ime: novoIme,
         prezime: novoPrezime,
         korisnickoIme: korisnickoIme,
@@ -79,8 +72,10 @@ document.getElementById('register-form')
         JSON.stringify(korisnik)
     );
 
-    alert('Регистрација успешна');
+    prikaziModal('Успех', 'Регистрација успешна. ');
+
 });
+
 function isValidRegistration() {
     let validno = true;
     let ime = document.getElementById('Ime');
@@ -125,4 +120,26 @@ function Validacija() {
         }
     });
 }
+
+function prikaziModal(naslov, poruka){
+
+    document.getElementById(
+        'messageModalTitle'
+    ).innerText = naslov;
+
+    document.getElementById(
+        'messageModalBody'
+    ).innerText = poruka;
+
+    let modal =
+        new bootstrap.Modal(
+            document.getElementById(
+                'messageModal'
+            )
+        );
+
+    modal.show();
+}
+
+
 Validacija();
