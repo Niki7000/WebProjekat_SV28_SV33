@@ -6,6 +6,13 @@ let authors = {};
 let booksLoaded = false;
 let authorsLoaded = false;
 
+let currentTitleQuery = '';
+let currentGenreQuery = '';
+
+let searchTitleInput;
+let searchGenreInput;
+let searchBtn;
+
 
 let request2 = new XMLHttpRequest();
 request2.open('GET', firebaseUrl + '/autori.json')
@@ -48,16 +55,17 @@ request.onload = function () {
 function proveriUcitavanje() {
     if (booksLoaded && authorsLoaded) {
         prikaziKnjige();
+        setupSearch();
     }
 }
 
-function prikaziKnjige() {
+function prikaziKnjige(listaKnjiga = bookIds) {
 
     let container = document.getElementById('books-container');
 
     container.innerHTML = '';
 
-    for (let id of bookIds) {
+    for (let id of listaKnjiga) {
 
         let knjiga = books[id];
 
@@ -79,13 +87,13 @@ function prikaziKnjige() {
 
                         <div class="flip-card-back">
 
-                            <h5>${knjiga.naziv}</h5>
+                            <h5>${oznaciTekst(knjiga.naziv, currentTitleQuery)}</h5>
 
                             <p><strong>Аутор:</strong> ${authors[knjiga.idAutora].ime} ${authors[knjiga.idAutora].prezime}</p>
 
                             <p><strong>ИСБН:</strong> ${knjiga.isbn}</p>
 
-                            <p><strong>Жанр:</strong> ${knjiga.zanr}</p>
+                            <p><strong>Жанр:</strong> ${oznaciTekst(knjiga.zanr, currentGenreQuery)}</p>
 
                         </div>
 
@@ -98,4 +106,86 @@ function prikaziKnjige() {
         </div>
         `;
     }
+}
+
+function escapeHtml(text) {
+    return String(text)
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#39;');
+}
+
+function oznaciTekst(text, query) {
+    let safeText = escapeHtml(text);
+
+    let safeQuery = query.trim();
+
+    if(safeQuery === ''){
+        return safeText;
+    }
+
+    let escapedQuery = safeQuery.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    let regex =
+        new RegExp(
+            '(' + escapedQuery + ')',
+            'gi'
+        );
+
+    return safeText.replace(
+        regex,
+        '<mark>$1</mark>'
+    );
+}
+
+function filtrirajKnjige(){
+    let titleQuery = searchTitleInput.value.trim().toLowerCase();
+    let genreQuery = searchGenreInput.value.trim().toLowerCase();
+
+    currentTitleQuery = titleQuery;
+    currentGenreQuery = genreQuery;
+
+    let searchResults = [];
+
+    for(let id in books){
+        let knjiga = books[id];
+
+        let nazivMatch = titleQuery === '' || knjiga.naziv.toLowerCase().includes(titleQuery);
+
+        let genreMatch = genreQuery === '' || knjiga.zanr.toLowerCase().includes(genreQuery);
+
+        if(nazivMatch && genreMatch){
+            searchResults.push(id);
+        }
+    }
+
+    if(searchResults.length === 0){
+        document.getElementById('books-container').innerHTML =
+        '<p class="text-center">Нема пронађених књига.</p>';
+        return;
+    }
+    prikaziKnjige(searchResults);
+}
+
+function setupSearch(){
+    searchTitleInput = document.getElementById('search-title');
+    searchGenreInput = document.getElementById('search-genre');
+
+    searchBtn = document.getElementById('search-btn');
+
+    searchTitleInput.addEventListener(
+            'input',
+            filtrirajKnjige
+        );
+
+    searchGenreInput.addEventListener(
+            'input',
+            filtrirajKnjige
+        );
+
+    searchBtn.addEventListener(
+            'click',
+            filtrirajKnjige
+        );
 }
