@@ -21,8 +21,8 @@ Promise.all([
 .then(data => {
     books = data[0];
     authors = data[1];
-    reviews = data[2];
-    users = data[3];
+    reviews = data[2] || {};
+    users = data[3] || {};
 
     prikaziKnjigu();
     prikaziRecenzije();
@@ -126,21 +126,56 @@ document.getElementById('review-form').addEventListener('submit',
         let text =document.getElementById('review-text').value.trim();
         let error = document.getElementById('review-error');
         error.innerHTML = '';
+        let korisnikId = localStorage.getItem('ulogovanKorisnik');
+        if(!korisnikId){
+            error.innerHTML = 'Морате бити пријављени.';
+            return;
+        }
 
         if(text.length < 10){
             error.innerHTML = 'Рецензија мора имати најмање 10 карактера.';
             return;
         }
 
-        reviews['temp' + Date.now()] = {
+        let noviId = generisiNoviReviewId();
+        let novaRecenzija = {
             datum: new Date().toISOString().split('T')[0],
             idKnjige: bookId,
-            idKorisnika: 'kor001',
+            idKorisnika: korisnikId,
             tekst: text
         };
 
-        prikaziRecenzije();
-
-        this.reset();
+        fetch(
+            firebaseUrl + '/recenzije/' + noviId + '.json',
+            {
+                method: 'PUT',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(
+                    novaRecenzija
+                )
+            }
+        )
+        .then(() => {
+            location.reload();
+        })
+        .catch(error => {
+            console.log(error);
+        });
     }
 );
+
+function generisiNoviReviewId(){
+    let maxBroj = 0;
+
+    for(let id in reviews){
+        let broj = parseInt(id.replace('rec', ''));
+
+        if(broj > maxBroj){
+            maxBroj = broj;
+        }
+    }
+    maxBroj++;
+    return 'rec' + String(maxBroj).padStart(3, '0');
+}
