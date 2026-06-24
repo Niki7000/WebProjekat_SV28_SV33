@@ -116,7 +116,41 @@ function Validacija() {
     forma.addEventListener('submit', function(event) {
         event.preventDefault();
         if (isValidRegistration()) {
-             forma.submit();
+            let novoIme = document.getElementById('Ime').value;
+            let novoPrezime = document.getElementById('Prezime').value;
+            let korisnickoIme = document.getElementById('username').value;
+            let email = document.getElementById('email').value;
+            let lozinka = document.getElementById('password').value;
+            let datumRodjenja = document.getElementById('datumRodjenja').value;
+            let adresa = document.getElementById('adresa').value;
+            let zanimanje = document.getElementById('zanimanje').value;
+            let korisnik = {
+                "adresa": adresa,
+                "datumRodjenja": datumRodjenja,
+                "email": email,
+                "ime": novoIme,
+                "korisnickoIme": korisnickoIme,
+                "lozinka": lozinka,
+                "prezime": novoPrezime,
+                "zanimanje": zanimanje
+            };
+            let noviKorisnikId = getNoviKorisnikId();
+            fetch(firebaseUrl + '/korisnici/'+noviKorisnikId+'.json', {
+                method: 'PUT',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(korisnik)
+            })
+            .then(response => response.json())
+            .then(data => {
+                localStorage.setItem('ulogovanKorisnik', JSON.stringify(data));
+                window.location.href = '../pages/korisnicki_profil.html';
+            })
+            .catch(error => {
+                console.error('Грешка при регистрацији:', error);
+                alert('Грешка при регистрацији');
+            });
         }
     });
 }
@@ -143,3 +177,11 @@ function prikaziModal(naslov, poruka){
 
 
 Validacija();
+
+function getNoviKorisnikId() {
+    let kljucevi = Object.keys(users);
+    let poslednjiKljuc = kljucevi[kljucevi.length - 1];
+    let poslednjiId = parseInt(poslednjiKljuc.replace('kor', ''));
+    let noviId = 'kor' + String((poslednjiId + 1)).padStart(3, '0');
+    return noviId;
+}
