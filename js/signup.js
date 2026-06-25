@@ -47,35 +47,6 @@ document.getElementById('login-form')
     }
 });
 
-document.getElementById('register-form')
-.addEventListener('submit', function(e){
-
-    e.preventDefault();
-
-    let novoIme = document.getElementById('reg-ime').value;
-
-    let novoPrezime = document.getElementById('reg-prezime').value;
-
-    let korisnickoIme = document.getElementById('reg-username').value;
-
-    let email = document.getElementById('reg-email').value;
-
-    let korisnik = {
-        ime: novoIme,
-        prezime: novoPrezime,
-        korisnickoIme: korisnickoIme,
-        email: email
-    };
-
-    localStorage.setItem(
-        'ulogovanKorisnik',
-        JSON.stringify(korisnik)
-    );
-
-    prikaziModal('Успех', 'Регистрација успешна. ');
-
-});
-
 function isValidRegistration() {
     let validno = true;
     let ime = document.getElementById('Ime');
@@ -144,13 +115,16 @@ function Validacija() {
             })
             .then(response => response.json())
             .then(data => {
-                localStorage.setItem('ulogovanKorisnik', JSON.stringify(data));
+                localStorage.setItem('ulogovanKorisnik', noviKorisnikId);
                 window.location.href = '../pages/korisnicki_profil.html';
             })
             .catch(error => {
                 console.error('Грешка при регистрацији:', error);
-                alert('Грешка при регистрацији');
+                prikaziModal('Грешка', 'Грешка при регистрацији. ');
             });
+        }
+        else{
+            prikaziModal('Грешка при регистрацији', 'Нисте попунили сва поља исправно. ');
         }
     });
 }
